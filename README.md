@@ -1,34 +1,34 @@
 # cloud-gitops-platform
 
-Plataforma cloud de referência construída como projecto pessoal para consolidar
-competências em DevSecOps, Infrastructure as Code e engenharia de plataformas.
+A complete cloud platform built as a personal project to consolidate
+skills in DevSecOps, Infrastructure as Code, and platform engineering.
 
-O projecto simula o ambiente operacional de um Platform Team real: uma aplicação
-distribuída, completamente automatizada desde o commit até ao deploy em produção,
-com observabilidade, segurança integrada e infraestrutura definida como código.
+This project simulates the operational environment of a real Platform Team:
+a distributed application, fully automated from commit to production deploy,
+with observability, integrated security, and infrastructure defined as code.
 
-## Stack tecnológica
+## Tech Stack
 
-| Camada | Tecnologias |
+| Layer | Technologies |
 |---|---|
-| Aplicação | Python · FastAPI · Docker |
-| Infraestrutura | Terraform · Ansible · K3s / EKS / AKS |
-| Orquestração | Kubernetes · Helm |
+| Application | Python · FastAPI · Docker |
+| Infrastructure | Terraform · Ansible · K3s / EKS / AKS |
+| Orchestration | Kubernetes · Helm |
 | GitOps & CI/CD | FluxCD · GitHub Actions |
-| Segurança | Trivy · Semgrep · OWASP ZAP · Kyverno · Sealed Secrets · cert-manager |
-| Observabilidade | Prometheus · Grafana · Loki · OpenTelemetry |
+| Security | Trivy · Semgrep · OWASP ZAP · Kyverno · Sealed Secrets · cert-manager |
+| Observability | Prometheus · Grafana · Loki · OpenTelemetry |
 
-## Estrutura do repositório
+## Repository Structure
 cloud-gitops-platform/
-├── infra/terraform/       # Provisionamento de infraestrutura cloud
-├── infra/ansible/         # Configuração de SO e ferramentas nos nós
-├── app/                   # API FastAPI + Dockerfile multi-stage
-├── k8s/                   # Manifests Kubernetes
-├── gitops/                # Configuração FluxCD/ArgoCD
-├── .github/workflows/     # Pipelines CI/CD
-├── scripts/               # Utilitários de deploy e operação
+├── infra/terraform/       # Cloud infrastructure provisioning
+├── infra/ansible/         # OS and tooling configuration on nodes
+├── app/                   # FastAPI application + multi-stage Dockerfile
+├── k8s/                   # Kubernetes manifests
+├── gitops/                # FluxCD/ArgoCD configuration
+├── .github/workflows/     # CI/CD pipelines
+├── scripts/               # Deploy and operations utilities
 ├── docs/adr/              # Architecture Decision Records
-└── RUNBOOK.md             # Guia de setup e demo
-## Como começar
+└── RUNBOOK.md             # Setup and demo guide
+## Getting Started
 
-Consulta o [RUNBOOK.md](./RUNBOOK.md) para instruções completas.
+See [RUNBOOK.md](./RUNBOOK.md) for full setup instructions.

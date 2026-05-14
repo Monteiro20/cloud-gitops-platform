@@ -1,22 +1,22 @@
-# ADR 001 — Estratégia de Kubernetes Local
+# ADR 001 — Local Kubernetes Strategy
 
-## Data
-2025-05-13
+## Date
+2025-05-14
 
-## Contexto
-O projecto requer um cluster Kubernetes para desenvolvimento e testes.
-As opções consideradas foram: K3s, Minikube, Kind, e EKS/AKS directamente.
+## Context
+The project requires a Kubernetes cluster for development and testing.
+Options considered: K3s, Minikube, Kind, and EKS/AKS directly.
 
-## Decisão
-Usar **K3s localmente** no WSL2 para todo o desenvolvimento.
-EKS/AKS apenas para validação final em cloud real.
+## Decision
+Use **K3s locally** on WSL2 for all development.
+EKS/AKS only for final cloud validation.
 
-## Razões
-- K3s é uma distribuição Kubernetes certificada e leve (~70MB)
-- Corre bem em WSL2 com os recursos disponíveis (7.7GB RAM)
-- Elimina custos cloud durante o desenvolvimento (~$73/mês de EKS)
-- Comportamento idêntico ao EKS/AKS para os fins deste projecto
+## Reasons
+- K3s is a certified, lightweight Kubernetes distribution (~70MB)
+- Runs well on WSL2 with available resources (7.7GB RAM)
+- Eliminates cloud costs during development (~$73/month for EKS)
+- Identical behaviour to EKS/AKS for the purposes of this project
 
-## Consequências
-- Não é possível testar features específicas de cloud (EKS managed node groups)
-- A validação cloud tem de ser feita numa janela de tempo controlada para limitar custos
+## Consequences
+- Cloud-specific features (EKS managed node groups) cannot be tested locally
+- Cloud validation must be done in a controlled time window to limit costs
