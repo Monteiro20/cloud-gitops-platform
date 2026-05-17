@@ -1,0 +1,11 @@
+---
+- name: Configure platform nodes
+  hosts: all
+  become: true
+  vars:
+    platform_user: "{{ lookup('env', 'USER') }}"
+
+  roles:
+    - common
+    - k3s
+    - monitoring

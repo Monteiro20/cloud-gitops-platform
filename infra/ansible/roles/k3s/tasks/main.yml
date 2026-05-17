@@ -1,0 +1,31 @@
+---
+- name: Check if K3s is already installed
+  stat:
+    path: /usr/local/bin/k3s
+  register: k3s_binary
+
+- name: Download and install K3s
+  shell: |
+    curl -sfL https://get.k3s.io | sh -
+  when: not k3s_binary.stat.exists
+
+- name: Ensure K3s service is running
+  service:
+    name: k3s
+    state: started
+    enabled: true
+
+- name: Create .kube directory for current user
+  file:
+    path: "/home/{{ platform_user }}/.kube"
+    state: directory
+    owner: "{{ platform_user }}"
+    mode: "0755"
+
+- name: Copy K3s kubeconfig for current user
+  copy:
+    src: /etc/rancher/k3s/k3s.yaml
+    dest: "/home/{{ platform_user }}/.kube/config"
+    owner: "{{ platform_user }}"
+    mode: "0600"
+    remote_src: true
