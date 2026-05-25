@@ -75,7 +75,7 @@ git push origin dev
 | Phase 1 | Repository structure | ✅ Done |
 | Phase 2 | Terraform + Ansible | ✅ Done |
 | Phase 3 | Application + Docker | ✅ Done |
-| Phase 4 | Kubernetes manifests | 🔲 Pending |
+| Phase 4 | Kubernetes manifests | ✅ Done |
 | Phase 5 | GitOps | 🔲 Pending |
 | Phase 6 | CI/CD | 🔲 Pending |
 | Phase 7 | DevSecOps | 🔲 Pending |
