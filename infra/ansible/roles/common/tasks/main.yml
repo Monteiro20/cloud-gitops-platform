@@ -15,7 +15,14 @@
       - unzip
       - make
       - net-tools
+      - openssh-server
     state: present
+
+- name: Ensure SSH service is running
+  service:
+    name: ssh
+    state: started
+    enabled: true
 
 - name: Disable root SSH login
   lineinfile:
